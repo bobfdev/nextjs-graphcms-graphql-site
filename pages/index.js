@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 import Head from 'next/head';
+import Link from 'next/link';
 import client from '../apolloClient';
 
 export default function Home({ nextjsProjects }) {
@@ -15,7 +16,7 @@ export default function Home({ nextjsProjects }) {
       <ul>
         {nextjsProjects.map((nextjsProject, i) => 
           <li key={i}>
-            <a href={nextjsProject.slug}>{nextjsProject.title}</a>
+            <Link href={`/nextjsProjects/${nextjsProject.slug}`}>{nextjsProject.title}</Link>
           </li>
         )}
       </ul>
